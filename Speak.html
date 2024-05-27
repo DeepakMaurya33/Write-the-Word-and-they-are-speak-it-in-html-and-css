@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #input {
+            background-color: black;
+            color: rgb(221, 193, 193);
+            border: 1px solid rgb(92, 49, 49);
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+        button {
+            background-color: black;
+            color: rgb(179, 135, 135);
+            border: 1px solid rgb(105, 58, 205);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        button:hover {
+            background-color: rgb(105, 58, 205);
+            color: black;
+        }
+    </style>
+    <title>Text to Speech</title>
+    
+</head>
+<body>
+    <div>
+        <input id="input" type="text" placeholder="Enter text here">
+        <button onclick="speak()">Speak</button>
+    </div>
+    <script>
+        function speak() {
+            var text = document.getElementById("input").value;
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
